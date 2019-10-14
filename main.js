@@ -35,8 +35,7 @@ function getrandom() {
 
 function genhash(){
     if (window.location.hash == ""){
-         var endp =    document.getElementById("epinput").value;
-var 
+         var endp = document.getElementById("epinput").value;
         window.location.hash = endp + getrandom();
     }
 }
