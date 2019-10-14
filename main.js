@@ -70,8 +70,11 @@ if (window.location.hash != "") {
         var decrypted = CryptoJS.AES.decrypt(data, window.location.hash.substr(1));
 
         if (decrypted != null) {
+          var abc = decrypted.toString(CryptoJS.enc.Utf8);
+            document.getElementById("t1").innerHTML = abc;
             
-            document.getElementById("t1").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
+            document.getElementById("urlinput").innerHTML = abc;
+              
         }
 
     });
