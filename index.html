@@ -24,19 +24,10 @@ myObj = { url: window.location.hash.substr(0) };
 myJSON = JSON.stringify(myObj);
 localStorage.setItem("testJSON", myJSON);
 
-// Retrieving data:
+    // Retrieving data:
 text = localStorage.getItem("testJSON");
-
-
-    
-var myObj, i, x = "";
-
-
-for (i in obj.url) {
-  x += obj.url[i] + "<br>";
-}
-    obj = JSON.parse(x);
-document.getElementById("demo").innerHTML = x;
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name;
 </script>
         
     </body>
