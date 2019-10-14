@@ -64,7 +64,8 @@ function shorturl(){
 var hashh = window.location.hash.substr(64)
 
 if (window.location.hash != "") {
-       var endpoint2 = "http://www.jsonstore.io/" + window.location.hash.substr(1, 65)
+       var ep1 =  window.location.hash.substr(1)
+       var ep2 = "http://www.jsonstore.io/" + ep1.substring(0,64);
     $.getJSON(endpoint2 + "/" ,function (data) {
         data = data["result"];
         var decrypted = CryptoJS.AES.decrypt(data, window.location.hash.substr(1));
