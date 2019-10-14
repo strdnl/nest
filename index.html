@@ -17,12 +17,7 @@
         <p id="demo"></p>
 
 <script>
-   var myObj, myJSON, text, obj;
-
-// Storing data:
-myObj = { url: window.location.hash.substr(0) };
-myJSON = JSON.stringify(myObj);
-localStorage.setItem("testJSON", myJSON);
+  
 
     // Retrieving data:
 text = localStorage.getItem("testJSON");
