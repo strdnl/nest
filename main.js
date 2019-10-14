@@ -20,13 +20,13 @@ var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString()
 function edit() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "text");
-  x.setAttribute("value", "Hello World!");
+  x.setAttribute("id", "uip");
   document.body.appendChild(x);
-   var x = document.createElement("Button");
-  x.setAttribute("type", "button");
-   x.setAttribute("function", shorturl());
-  x.setAttribute("value", "Submit!");
-  document.body.appendChild(x);
+   var y = document.createElement("Button");
+  y.setAttribute("type", "button");
+   y.setAttribute("onClick", shorturl());
+  y.setAttribute("label", "Submit!");
+  document.body.appendChild(y);
 }
 
 function geturl(){
