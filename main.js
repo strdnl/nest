@@ -6,6 +6,11 @@ obj = JSON.parse(text);
 var don = obj.url;
 // document.getElementById("demo").innerHTML = don ;
 
+function show(){
+var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
+    return codex;
+}
+
 function encrypt(url){
 var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
     return codex;
@@ -34,7 +39,7 @@ function getrandom() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for (var i = 0; i < 5; i++)
+    for (var i = 0; i < 25; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
@@ -46,7 +51,7 @@ function genhash(){
        var myObj, myJSON, text, obj;
 
 // Storing data:
-myObj = {url: don + + "<br>" + window.location.hash.substr(0) };
+myObj = {url:  window.location.hash.substr(1) };
 myJSON = JSON.stringify(myObj);
 localStorage.setItem("testJSON", myJSON);
     }
@@ -75,7 +80,10 @@ function shorturl(){
 var hashh = window.location.hash.substr(64)
 
 if (window.location.hash != "") {
-       var ep1 =  window.location.hash.substr(1)
+      load()  
+        }
+function load(){
+   var ep1 =  window.location.hash.substr(1)
        var ep2 = "http://www.jsonstore.io/" + ep1.substring(0,64);
     $.getJSON(ep2 + "/" ,function (data) {
         data = data["result"];
@@ -89,10 +97,11 @@ if (window.location.hash != "") {
            var myObj, myJSON, text, obj;
 
 // Storing data:
-myObj = { url: don + + "<br>" + window.location.hash.substr(0) };
+myObj = { url: window.location.hash.substr(1) };
 myJSON = JSON.stringify(myObj);
-localStorage.setItem("testJSON", myJSON);    
-        }
-
+localStorage.setItem("testJSON", myJSON);  
+  
+  
+}
     });
 }
