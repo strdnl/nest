@@ -1,4 +1,5 @@
-var endp = window.location.hash.substr(0,64);
+var endp = "849a691f3e4bd20104f776de4193d8094f4f264f8cf8437bf0e8decc7d0c1577";
+       
 
 var endpoint = "http://www.jsonstore.io/" + endp;
                     
