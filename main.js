@@ -7,8 +7,9 @@ var don = obj.url;
 // document.getElementById("demo").innerHTML = don ;
 
 function show(){
-var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
-    return codex;
+          window.location.hash = don;
+
+load();
 }
 
 function encrypt(url){
@@ -24,10 +25,11 @@ function cre1() {
 }
 
 function geturl(){
+  var prev = document.getElementById("t1").innerHTML;
     var url = document.getElementById("urlinput").value;
     var protocol_ok = url.startsWith(" / ") || url.startsWith(" // ") ;
     if(!protocol_ok){
-        var newurl = " // "+url;
+        var newurl = prev + "<br>" + url;
        return newurl;
         
         }else{
