@@ -1,4 +1,4 @@
-var endp = "849a691f3e4bd20104f776de4193d8094f4f264f8cf8437bf0e8decc7d0c1577";
+var endp = window.location.hash.substr(0,64);
 
 var endpoint = "http://www.jsonstore.io/" + endp;
                     
@@ -30,7 +30,7 @@ function getrandom() {
 
 function genhash(){
     if (window.location.hash == ""){
-        window.location.hash = getrandom();
+        window.location.hash = "849a691f3e4bd20104f776de4193d8094f4f264f8cf8437bf0e8decc7d0c1577" + getrandom();
     }
 }
 
@@ -53,7 +53,7 @@ function shorturl(){
     send_request(longurl);
 }
 
-var hashh = window.location.hash.substr(1)
+var hashh = window.location.hash.substr(64)
 
 if (window.location.hash != "") {
     $.getJSON(endpoint + "/" ,function (data) {
