@@ -20,12 +20,12 @@ var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString()
 function edit() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "text");
-  x.setAttribute("id", "uip");
+  x.setAttribute("id", "epinput");
   document.body.appendChild(x);
    var y = document.createElement("Button");
-  y.setAttribute("type", "button");
+  y.setAttribute("type", "Button");
    y.setAttribute("onClick", shorturl());
-  y.setAttribute("label", "Submit!");
+  y.setAttribute("label", "New!");
   document.body.appendChild(y);
 }
 
