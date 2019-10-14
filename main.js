@@ -1,4 +1,6 @@
-var endpoint = "http://www.jsonstore.io/3f372cbb892d082a509f9484d4ea8f7426b30954d1a6cb2255e0a19402bbf419";
+var endp = "849a691f3e4bd20104f776de4193d8094f4f264f8cf8437bf0e8decc7d0c1577";
+
+var endpoint = "http://www.jsonstore.io/" + endp;
                     
 function encrypt(url){
 var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
@@ -7,9 +9,9 @@ var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString()
 
 function geturl(){
     var url = document.getElementById("urlinput").value;
-    var protocol_ok = url.startsWith("http://") || url.startsWith("https://") || url.startsWith("ftp://") || url.startsWith("data:text/");
+    var protocol_ok = url.startsWith(" / ") || url.startsWith(" // ") ;
     if(!protocol_ok){
-        var newurl = "http://"+url;
+        var newurl = " // "+url;
        return newurl;
         
         }else{
@@ -36,7 +38,7 @@ function send_request(url) {
     this.url = url;
     
     $.ajax({
-        'url': endpoint + "/" + window.location.hash.substr(1),
+        'url': endpoint + "/",
         'type': 'POST',
         'data': JSON.stringify(this.url),
         'dataType': 'json',
@@ -54,7 +56,7 @@ function shorturl(){
 var hashh = window.location.hash.substr(1)
 
 if (window.location.hash != "") {
-    $.getJSON(endpoint + "/" + hashh, function (data) {
+    $.getJSON(endpoint + "/" ,function (data) {
         data = data["result"];
         var decrypted = CryptoJS.AES.decrypt(data, window.location.hash.substr(1));
 
