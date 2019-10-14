@@ -17,17 +17,22 @@ var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString()
     return codex;
 }
 
-function cre1() {
+function edit() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "text");
   x.setAttribute("value", "Hello World!");
+  document.body.appendChild(x);
+   var x = document.createElement("Button");
+  x.setAttribute("type", "button");
+   x.setAttribute("function", shorturl());
+  x.setAttribute("value", "Submit!");
   document.body.appendChild(x);
 }
 
 function geturl(){
   var prev = document.getElementById("t1").innerHTML;
     var url = document.getElementById("urlinput").value;
-    var protocol_ok = url.startsWith(" / ") || url.startsWith(" // ") ;
+    var protocol_ok = url.startsWith("NESTEGG:") || url.startsWith(don) ;
     if(!protocol_ok){
         var newurl = prev + "<br>" + url;
        return newurl;
