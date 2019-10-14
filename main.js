@@ -95,7 +95,7 @@ function load(){
           var abc = decrypted.toString(CryptoJS.enc.Utf8);
             document.getElementById("t1").innerHTML = abc;
             
-            document.getElementById("urlinput").innerHTML = abc;
+           // document.getElementById("urlinput").innerHTML = abc;
            var myObj, myJSON, text, obj;
 
 // Storing data:
