@@ -27,13 +27,14 @@ function pedit() {
 function geturl(){
   var prev = document.getElementById("t1").innerHTML;
     var url = document.getElementById("urlinput").value;
-    var protocol_ok = url.startsWith("NESTEGG:") || url.startsWith(don) ;
+    var protocol_ok = url.startsWith("$$$") || url.startsWith("###") ;
     if(!protocol_ok){
         var newurl = prev + "<br>" + url;
        return newurl;
         
         }else{
-            return url;
+          var nurl2 = url.substring(3);
+            return nurl2;
         }
 }
 
