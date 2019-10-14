@@ -1,5 +1,11 @@
 
                     
+ // Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+var don = obj.url;
+document.getElementById("demo").innerHTML = don ;
+
 function encrypt(url){
 var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
     return codex;
@@ -40,7 +46,7 @@ function genhash(){
        var myObj, myJSON, text, obj;
 
 // Storing data:
-myObj = { url: window.location.hash.substr(0) };
+myObj = {url: don + + "<br>" + window.location.hash.substr(0) };
 myJSON = JSON.stringify(myObj);
 localStorage.setItem("testJSON", myJSON);
     }
@@ -83,7 +89,7 @@ if (window.location.hash != "") {
            var myObj, myJSON, text, obj;
 
 // Storing data:
-myObj = { url: window.location.hash.substr(0) };
+myObj = { url: don + + "<br>" + window.location.hash.substr(0) };
 myJSON = JSON.stringify(myObj);
 localStorage.setItem("testJSON", myJSON);    
         }
