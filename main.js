@@ -60,7 +60,7 @@ if (window.location.hash != "") {
 
         if (decrypted != null) {
             
-            window.location.href = decrypted.toString(CryptoJS.enc.Utf8);
+            document.getElementById("t1").innerHTML = decrypted.toString(CryptoJS.enc.Utf8);
         }
 
     });
