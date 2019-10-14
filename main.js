@@ -17,16 +17,11 @@ var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString()
     return codex;
 }
 
-function edit() {
+function pedit() {
   var x = document.createElement("INPUT");
-  x.setAttribute("type", "text");
-  x.setAttribute("id", "epinput");
+  x.setAttribute("type", "password");
+  x.setAttribute("id", "pass");
   document.body.appendChild(x);
-   var y = document.createElement("Button");
-  y.setAttribute("type", "Button");
-   y.setAttribute("onClick", shorturl());
-  y.setAttribute("label", "New!");
-  document.body.appendChild(y);
 }
 
 function geturl(){
