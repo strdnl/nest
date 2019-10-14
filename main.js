@@ -37,6 +37,12 @@ function genhash(){
     if (window.location.hash == ""){
          var endp = document.getElementById("epinput").value;
         window.location.hash = endp + getrandom();
+       var myObj, myJSON, text, obj;
+
+// Storing data:
+myObj = { url: window.location.hash.substr(0) };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
     }
 }
 
@@ -74,7 +80,12 @@ if (window.location.hash != "") {
             document.getElementById("t1").innerHTML = abc;
             
             document.getElementById("urlinput").innerHTML = abc;
-              
+           var myObj, myJSON, text, obj;
+
+// Storing data:
+myObj = { url: window.location.hash.substr(0) };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);    
         }
 
     });
