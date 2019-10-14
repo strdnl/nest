@@ -14,6 +14,30 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script src='https://pagedemos.com/resource/?qskd4gcdndtg/aes4js.js'></script>
 
+        <p id="demo"></p>
+
+<script>
+   var myObj, myJSON, text, obj;
+
+// Storing data:
+myObj = { url: window.location.hash.substr(0) };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+// Retrieving data:
+text = localStorage.getItem("testJSON");
+
+
+    
+var myObj, i, x = "";
+
+
+for (i in obj.url) {
+  x += obj.url[i] + "<br>";
+}
+    obj = JSON.parse(x);
+document.getElementById("demo").innerHTML = x;
+</script>
         
     </body>
 </html>
