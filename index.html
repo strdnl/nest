@@ -24,7 +24,9 @@
     // Retrieving data:
 text = localStorage.getItem("testJSON");
 obj = JSON.parse(text);
-document.getElementById("demo").innerHTML = obj.url;
+    if (obj.url != "") {
+document.getElementById("demo").innerHTML = "LOADED";
+    }
 </script>
         
     </body>
