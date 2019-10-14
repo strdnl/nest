@@ -1,7 +1,4 @@
-var endp = "849a691f3e4bd20104f776de4193d8094f4f264f8cf8437bf0e8decc7d0c1577";
-       
 
-var endpoint = "http://www.jsonstore.io/" + endp;
                     
 function encrypt(url){
 var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
@@ -38,15 +35,18 @@ function getrandom() {
 
 function genhash(){
     if (window.location.hash == ""){
-        window.location.hash = "849a691f3e4bd20104f776de4193d8094f4f264f8cf8437bf0e8decc7d0c1577" + getrandom();
+         var endp =    document.getElementById("epinput").value;
+var 
+        window.location.hash = endp + getrandom();
     }
 }
 
 function send_request(url) {
     this.url = url;
-    
+    var ep1 =  window.location.hash.substr(1)
+       var ep2 = "http://www.jsonstore.io/" + ep1.substring(0,64);
     $.ajax({
-        'url': endpoint + "/",
+        'url': ep2 + "/",
         'type': 'POST',
         'data': JSON.stringify(this.url),
         'dataType': 'json',
