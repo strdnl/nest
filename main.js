@@ -4,7 +4,7 @@
 text = localStorage.getItem("testJSON");
 obj = JSON.parse(text);
 var don = obj.url;
-document.getElementById("demo").innerHTML = don ;
+// document.getElementById("demo").innerHTML = don ;
 
 function encrypt(url){
 var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
