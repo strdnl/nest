@@ -15,30 +15,33 @@
 body{
 font-family: 'Josefin Sans', sans-serif;
 color:black;
-}
+    background-color:#D3D3D3 ;
+
  
 </style>
 </head>
 <body>
-<div class="container" style="text-align:left">
+<div class="container" style="text-align:center">
   <div class="column">
     <div class="column">
 </div>
-     <div class="column"><h2>N3ST/./ZER0</h2></div>
-    <div class="column column-50 column-offset-25">
+     <div class="column"><h2>N3ST/./ZER0</h2>
+         <button onclick="shorturl()">ADD/NEW</button>
+ <button onclick="show()">LOAD</button>
+      </div>
+    <div class="column column-50 column-offset-25" style="text-align:left">
         <small id="t1"></small>
+     
         <textarea id = "urlinput" rows = "10%" cols = "60%"></textarea>
         <p id="demo"></p>
-        <button onclick="shorturl()">ADD/NEW</button>
- <button onclick="show()">LOAD</button>
+        
    <input type="text" id="epinput">enter endpoint</input>
          <button onclick="pedit()">password</button>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="main.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
 <script src='https://pagedemos.com/resource/?qskd4gcdndtg/aes4js.js'></script>
-     
-</div>
+    </div>
 <script>
   // Retrieving data:
 text = localStorage.getItem("testJSON");
