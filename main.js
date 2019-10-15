@@ -13,8 +13,9 @@ load();
 }
 
 function pedit2(){
-       var d1 =  document.getElementById("urlinput").value;
-  document.getElementById("urlinput").innerHTML = "<a href=" + "'https://" + d1 + "'>";
+       var d1 = document.getElementById("urlinput").value;
+  var d2 = "<a href=" + "'https://" + d1 + "'>";
+  document.getElementById("urlinput").value = d2;
 }
 
 function encrypt(url){
@@ -87,7 +88,7 @@ function shorturl(){
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
-  show();
+  load();
 }
 
 var hashh = window.location.hash.substr(64)
