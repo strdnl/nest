@@ -16,15 +16,7 @@ body{
 font-family: 'Josefin Sans', sans-serif;
 color:black;
 }
-.button-black {
-  background-color: transparent;
-  border-color: black;
- font-size: 1.4rem;
-  height: 4.5rem;
-  line-height: 4.5rem;
-  padding: 0 2rem;
-}
-
+ 
 </style>
 </head>
 <body>
@@ -34,14 +26,12 @@ color:black;
 </div>
      <div class="column"><h2>N3ST/./ZER0</h2></div>
     <div class="column column-50 column-offset-25">
-<button onclick="show()">LOAD</button>
         <small id="t1"></small>
+        <textarea id = "urlinput" rows = "10%" cols = "60%"></textarea>
         <p id="demo"></p>
         <button onclick="shorturl()">ADD/NEW</button>
- 
-         <textarea id = "urlinput" rows = "10%" cols = "60%"></textarea>
-       
-        <input type="text" id="epinput">endpoint</input>
+ <button onclick="show()">LOAD</button>
+   <input type="text" id="epinput">enter endpoint</input>
          <button onclick="pedit()">password</button>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="main.js"></script>
