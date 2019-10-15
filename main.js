@@ -16,13 +16,14 @@ function pedit2(){
        var d1 = document.getElementById("urlinput").value;
   var d2 = "<a href=" + "'https://" + d1 + "'>" + d1 + "</a>";
   document.getElementById("urlinput").value = d2;
+   shorturl();
 }
 
 function pedit(){
        var d1 = document.getElementById("urlinput").value;
   var d2 = "<img src='" + d1 + "' alt='" + d1 + "'>";
   document.getElementById("urlinput").value = d2;
-  "<img src='" + d1 + "' alt='" + d1 + "'>"
+ shorturl();
 }
 
 function encrypt(url){
@@ -95,7 +96,7 @@ function shorturl(){
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
-  load();
+  reload();
 }
 
 var hashh = window.location.hash.substr(64)
