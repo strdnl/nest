@@ -12,6 +12,14 @@ function show(){
 load();
 }
 
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
 function pedit2(){
        var d1 = document.getElementById("urlinput").value;
   var d2 = "<a href=" + "'https://" + d1 + "'>" + d1 + "</a>";
@@ -96,8 +104,9 @@ function shorturl(){
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
-    document.getElementById("urlinput").value = "";
-  document.getElementById("urlinput").placholder = "POSTED";
+    document.getElementById("urlinput").value = "WAIT THREE SECONDS";
+  wait(3000);
+  document.getElementById("urlinput").value = "";
  show();
 }
 
