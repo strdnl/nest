@@ -67,7 +67,7 @@ localStorage.setItem("testJSON", myJSON);
 function send_request(url) {
     this.url = url;
     var ep1 =  window.location.hash.substr(1)
-       var ep2 = "http://www.jsonstore.io/" + ep1.substring(0,64);
+       var ep2 = "https://www.jsonstore.io/" + ep1.substring(0,64);
     $.ajax({
         'url': ep2 + "/",
         'type': 'POST',
@@ -91,7 +91,7 @@ if (window.location.hash != "") {
         }
 function load(){
    var ep1 =  window.location.hash.substr(1)
-       var ep2 = "http://www.jsonstore.io/" + ep1.substring(0,64);
+       var ep2 = "https://www.jsonstore.io/" + ep1.substring(0,64);
     $.getJSON(ep2 + "/" ,function (data) {
         data = data["result"];
         var decrypted = CryptoJS.AES.decrypt(data, window.location.hash.substr(1));
