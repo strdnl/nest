@@ -50,7 +50,7 @@ color:black;
 <body>
 <div class="container" style="text-align:center">
   <div class="column">
-     <div class="column"><h2>NE5T-K</h2>
+     <div class="column"><h2 id="heed">NE5T-K</h2>
           <button class="button" onclick="show()">(RE)LOAD FROM STORAGE</button>
          <br> 
           
@@ -77,11 +77,19 @@ color:black;
 <script src='https://pagedemos.com/resource/?qskd4gcdndtg/aes4js.js'></script>
     </div>
 <script>
+    if (typeof(Storage) !== "undefined") {
+  // Code for localStorage/sessionStorage.
+
   // Retrieving data:
 text = localStorage.getItem("testJSON");
 obj = JSON.parse(text);
     if (obj.url != "") {
 document.getElementById("demo").innerHTML = "== READY TO LOAD ==";
+    }} else {
+        document.getElementById("demo").innerHTML = "== BROWSER NOT SUPPORTED =="; 
+        document.getElementById("t1").innerHTML = "== BROWSER NOT SUPPORTED ==";
+            document.getElementById("heed").innerHTML = "== BROWSER NOT SUPPORTED ==";
+
     }
 </script>
         
