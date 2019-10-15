@@ -96,7 +96,9 @@ function shorturl(){
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
-  reload();
+    document.getElementById("urlinput").value = "";
+  document.getElementById("urlinput").placholder = "POSTED";
+ show();
 }
 
 var hashh = window.location.hash.substr(64)
