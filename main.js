@@ -101,13 +101,17 @@ function send_request(url) {
 
 function shorturl(){
     var longurl = geturl();
+   if (longurl == ""){
+     show();
+     return;
+   } else {
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
     document.getElementById("urlinput").value = "WAIT THREE SECONDS";
-  wait(3000);
+  //wait(3000);
   document.getElementById("urlinput").value = "";
- show();
+   }
 }
 
 var hashh = window.location.hash.substr(64)
