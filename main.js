@@ -12,6 +12,11 @@ function show(){
 load();
 }
 
+function pedit2(){
+       var d1 =  document.getElementById("urlinput").value;
+  document.getElementById("urlinput").innerHTML = "<a href=" + "'https://" + d1 + "'>";
+}
+
 function encrypt(url){
 var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString();
     return codex;
@@ -82,6 +87,7 @@ function shorturl(){
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
+  show();
 }
 
 var hashh = window.location.hash.substr(64)
