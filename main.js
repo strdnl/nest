@@ -14,8 +14,15 @@ load();
 
 function pedit2(){
        var d1 = document.getElementById("urlinput").value;
-  var d2 = "<a href=" + "'https://" + d1 + "'>";
+  var d2 = "<a href=" + "'https://" + d1 + "'>" + d1 + "</a>";
   document.getElementById("urlinput").value = d2;
+}
+
+function pedit(){
+       var d1 = document.getElementById("urlinput").value;
+  var d2 = "<img src='" + d1 + "' alt='" + d1 + "'>";
+  document.getElementById("urlinput").value = d2;
+  "<img src='" + d1 + "' alt='" + d1 + "'>"
 }
 
 function encrypt(url){
@@ -23,7 +30,7 @@ var codex = CryptoJS.AES.encrypt(url, window.location.hash.substr(1)).toString()
     return codex;
 }
 
-function pedit() {
+function godsedit() {
   var x = document.createElement("INPUT");
   x.setAttribute("type", "password");
   x.setAttribute("id", "pass");
