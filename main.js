@@ -27,13 +27,13 @@ function pedit() {
 function geturl(){
   var prev = document.getElementById("t1").innerHTML;
     var url = document.getElementById("urlinput").value;
-    var protocol_ok = url.startsWith("$$$") || url.startsWith("###") ;
+    var protocol_ok = url.startsWith("###") || url.startsWith("$$$") || url.startsWith("###") ;
     if(!protocol_ok){
-        var newurl = prev + "<br>" + url + "<sub><i>" + Date.now() + "</i></sub>";
+        var newurl = prev + "<br>" + url + "<i><small><sup>  " + Date.now() + "</sup></small></i>";
        return newurl;
         
         }else{
-          var nurl2 = url.substring(3);
+          var nurl2 = "<b><u>" + url.substring(3) + "</u></b>";
             return nurl2;
         }
 }
@@ -51,6 +51,10 @@ function genhash(){
     if (window.location.hash == ""){
          var endp = document.getElementById("epinput").value;
         window.location.hash = endp + getrandom();
+         var weet = document.getElementById("urlinput").value;
+         document.getElementById("urlinput").value = "$$$" + weet;
+
+
        var myObj, myJSON, text, obj;
 
 // Storing data:
