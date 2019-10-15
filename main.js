@@ -22,16 +22,23 @@ function wait(ms){
 
 function pedit2(){
        var d1 = document.getElementById("urlinput").value;
+  if (d1!="") {
   var d2 = "<a href=" + "'https://" + d1 + "'>" + d1 + "</a>";
   document.getElementById("urlinput").value = d2;
-   shorturl();
+   shorturl();}
+  else {
+    show();}
 }
 
 function pedit(){
        var d1 = document.getElementById("urlinput").value;
+   if (d1!="") {
   var d2 = "<img src='" + d1 + "' alt='" + d1 + "'>";
   document.getElementById("urlinput").value = d2;
  shorturl();
+   }else {
+    show() 
+   }
 }
 
 function encrypt(url){
