@@ -47,8 +47,12 @@ function godsedit() {
 }
 
 function geturl(){
+  show();
   var prev = document.getElementById("t1").innerHTML;
     var url = document.getElementById("urlinput").value;
+   if (url == ""){
+     return url;
+   } else {
     var protocol_ok = url.startsWith("###") || url.startsWith("$$$") || url.startsWith("###") ;
     if(!protocol_ok){
         var newurl = prev + "<br>" + url + "<i><small><sup>  " + Date.now() + "</sup></small></i>";
@@ -57,7 +61,7 @@ function geturl(){
         }else{
           var nurl2 = "<b><u>" + url.substring(3) + "</u></b>";
             return nurl2;
-        }
+        }}
 }
 
 function getrandom() {
@@ -101,17 +105,16 @@ function send_request(url) {
 
 function shorturl(){
     var longurl = geturl();
-   if (longurl == ""){
-     show();
-     return;
-   } else {
+ if (longurl == ""){
+    return;
+ } else {
     genhash();
    var longurl = encrypt(longurl)
     send_request(longurl);
     document.getElementById("urlinput").value = "WAIT THREE SECONDS";
   //wait(3000);
   document.getElementById("urlinput").value = "";
-   }
+ }
 }
 
 var hashh = window.location.hash.substr(64)
