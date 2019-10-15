@@ -29,7 +29,7 @@ function geturl(){
     var url = document.getElementById("urlinput").value;
     var protocol_ok = url.startsWith("$$$") || url.startsWith("###") ;
     if(!protocol_ok){
-        var newurl = prev + "<br>" + url;
+        var newurl = prev + "<br>" + url + "<sub><i>" + Date.now() + "</i></sub>";
        return newurl;
         
         }else{
