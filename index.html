@@ -42,22 +42,26 @@ color:black;
 <div class="container" style="text-align:center">
   <div class="column">
      <div class="column"><h2>N3ST/./ZER0</h2>
-         <button class="button" onclick="shorturl()">ADD/NEW</button>
- <button class="button" onclick="show()">LOAD</button>
+          <button class="button" onclick="show()">LOAD</button>
+         <br>
+         <button class="button1" onclick="shorturl()">ADD/NEW</button>
+           <button class="button1" onclick="pedit()">image</button>
+     <button class="button1" onclick="pedit2()">link</button>
+
       </div>
     <div class="column column-50 column-offset-25" style="text-align:left">
+        <textarea id="urlinput" placeholder="enter your text here" rows="4" cols="50"></textarea>
         <p id="t1"></p>
      
-        <input type="text" id="urlinput" bgcolor="white"></input>
+// <input type="text" id="urlinput" bgcolor="white"></input>
        </div>
      
         <br>
-     <button class="button1" onclick="pedit()">image</button>
-     <button class="button1" onclick="pedit2()">link</button>
+   
       <br>
         <small id="demo"></small>
           <br>
-   <input type="text" id="epinput" value="enter endpoint"></input>
+   <input type="text" id="epinput" placeholder="enter jsonstore endpoint"></input>
        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="main.js"></script>
