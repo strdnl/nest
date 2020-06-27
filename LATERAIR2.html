@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>WebSocket Chat Demo with WebRTC Calling</title>
+  <meta charset="utf-8">
+  
+  <script src="client.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+</head>
+<body>
+<input type="file" id="myFile">
+<hr>
+<!--<div style="width: 300px;height: 0px" id="output"></div>-->
+<textarea style="width:500px;height: 400px" id="output" hidden="true"></textarea>
+
+<script>
+var input = document.getElementById("myFile");
+var output = document.getElementById("output");
+
+input.addEventListener("change", async function () {
+  if (this.files && this.files[0]) {
+    var myFile = this.files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener('load', function (e) {
+      output.textContent = e.target.result;
+    });
+
+    reader.readAsDataURL(myFile);
+  }
+var hash = await hashh(output);
+var hhh = hash.substr(1,12);
+document.getElementById("title").innerHTML = window.location.href + "#" + hhh;
+document.getElementById("name").value = hhh;
+connect();
+});
+
+async function hashh(message) {
+  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  const hashBuffer = await crypto.subtle.digest('SHA-1', msgUint8);         
+  const hashArray = Array.from(new Uint8Array(hashBuffer));                     
+  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
+  return hashHex;
+}
+
+// Register a protocol handler for "magnet:" (will prompt the user)
+  if ('registerProtocolHandler' in navigator) {
+console.log(location.origin);
+    navigator.registerProtocolHandler('urn', location.origin + '#%s', location.origin)
+  }
+
+
+
+</script><div class="container">
+  <div class="infobox">
+    <p id ="title">//LATERALAIR2.0</p>
+      
+    <p>Enter a username: <input id="name" type="text" maxlength="12" required autocomplete="username" inputmode="verbatim" placeholder="Username">
+      <input type="button" name="login" value="Log in" onclick="connect()"></p>
+  </div>
+  
+ 
+
+  <div class="chatbox"></div>
+ 
+  <div class="empty-container"></div>
+  <div class="chat-controls">
+
+
+    Chat:<br/>
+     <input id="user" type="text" name="text" size="100" maxlength="256" placeholder="User" autocomplete="off">
+
+    <input id="text" type="text" name="text" size="100"  placeholder="Say something meaningful..." autocomplete="off" onkeyup="handleKey(event)" disabled>
+    <input type="button" id="send" name="send" value="Send" onclick="handleSendButton()" disabled>
+  </div>
+</div>
+<script>
+if (location.hash!=""){
+document.getElementById("name").value = (Math.random()+"");
+connect();
+}
+</script>
+</body>
+</html>
