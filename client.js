@@ -137,7 +137,7 @@ tryAgain();}
 
       case "message":
 if  (msg.text=="request") {serveanddance(msg.name)
- text = "served " + msg.name + " at " + timeStr}
+ text = "served " + msg.name + " at " + timeStr + "<br>"}
 else {
         text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
 if (requeston==1){ 
