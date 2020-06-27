@@ -38,7 +38,7 @@ document.getElementById("public").innerHTML = textbox;
 
 var key = nacl.sign.keyPair();
 publick = nacl.util.encodeBase64(key.publicKey);
-     privk = nacl.util.encodeBase64(key.privateKey);
+     privk = nacl.util.encodeBase64(key.secretKey);
 
 
 }
@@ -46,7 +46,7 @@ publick = nacl.util.encodeBase64(key.publicKey);
      
      nacl.sign.keyPair.fromSeed(seed);
      publick = nacl.util.encodeBase64(key.publicKey);
-     privk = nacl.util.encodeBase64(key.privateKey);
+     privk = nacl.util.encodeBase64(key.secretKey);
    }
 ///COUNTDOWN
 
