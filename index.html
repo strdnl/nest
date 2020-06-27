@@ -37,16 +37,16 @@ document.getElementById("public").innerHTML = textbox;
    function kee(){
 
 var key = nacl.sign.keyPair();
-publick = nacl.util.encodeBase64(key.publicKey);
-     privk = nacl.util.encodeBase64(key.secretKey);
+publick = key.publicKey;
+     privk = key.secretKey;
 
 
 }
    function skee(seed){
      
      nacl.sign.keyPair.fromSeed(seed);
-     publick = nacl.util.encodeBase64(key.publicKey);
-     privk = nacl.util.encodeBase64(key.secretKey);
+publick = key.publicKey;
+     privk = key.secretKey;
    }
 ///COUNTDOWN
 
