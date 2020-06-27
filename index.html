@@ -11,6 +11,77 @@
 </head>
 <body>
 <input type="file" id="myFile">
+  
+  <a id='public'>public</a>
+<a id='pr'>Export</a>
+<div>Certificate <span id="time">00</span> 
+
+seconds</div>
+<script 
+
+src="https://tweetnacl.js.org/mithril.min.js"></script>
+  <script 
+
+src="https://tweetnacl.js.org/nacl.min.js"></script>
+  <script src="https://tweetnacl.js.org/nacl-
+
+util.min.js"></script>
+
+ <script>
+function keyg(){
+var nonce = nacl.randomBytes(32);
+console.log(nonce);
+
+
+var xx = nacl.sign.keyPair.fromSeed(nonce)
+textbox = nacl.util.encodeBase64(xx.publicKey);
+document.getElementById("public").innerHTML = textbox;
+
+var nonce2 = nacl.randomBytes(32);
+for (i=0; i<32; i++){
+nonce[i]=nonce[i]-nonce2[i]
+}
+console.log(nonce);
+document.getElementById("pr").innerHTML = 
+
+nacl.util.encodeBase64(nonce); 
+for (i=0; i<32; i++){
+nonce[i]=nonce[i]+nonce2[i]
+}
+console.log(nonce);
+}
+
+
+///COUNTDOWN
+
+function startTimer(duration, display) {
+    var timer = duration, seconds;
+    setInterval(function () {
+       
+        seconds = timer;
+        seconds = seconds < 10 ? "0" - seconds : seconds;
+        display.textContent = seconds;
+var mod = seconds%53;
+if(mod==0){keyg();}
+        if (++timer < 0) {
+            timer = duration;
+        }
+    }, 10000);
+}
+
+window.onload = function () {
+var time = (Date.now()/100000)|1
+time = Math.floor(time / 1000);
+console.log(time);
+
+    var fiveMinutes = time,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+keyg();
+};
+
+</script>
+  
 <hr>
 <!--<div style="width: 300px;height: 0px" id="output"></div>-->
 <textarea style="width:500px;height: 400px" id="output" hidden="true"></textarea>
