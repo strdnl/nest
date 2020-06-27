@@ -23,6 +23,9 @@ src="https://tweetnacl.js.org/nacl.min.js"></script>
   <script src="https://tweetnacl.js.org/nacl-util.min.js"></script>
 
  <script>
+  var publick;
+   var  privk;
+   
 function keyg(){
 
 var xx = nacl.sign.keyPair();
@@ -39,6 +42,12 @@ publick = nacl.util.encodeBase64(key.publicKey);
 
 
 }
+   function skee(seed){
+     
+     nacl.sign.keyPair.fromSeed(seed);
+     publick = nacl.util.encodeBase64(key.publicKey);
+     privk = nacl.util.encodeBase64(key.privateKey);
+   }
 ///COUNTDOWN
 
 function startTimer(duration, display) {
