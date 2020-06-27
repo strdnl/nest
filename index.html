@@ -79,7 +79,7 @@ input.addEventListener("change", async function () {
 
     reader.readAsDataURL(myFile);
   }
-var hash = await hashh(myFile);
+var hash = await hashh(output);
 var hhh = hash.substr(1,12);
 document.getElementById("title").innerHTML = window.location.href + "#" + hhh;
 document.getElementById("name").value = hhh;
