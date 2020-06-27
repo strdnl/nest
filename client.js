@@ -35,10 +35,10 @@ function log(text) {
 //SIMPLE TING EnCrypT DeCRYpt
 
 function enc (message, nonce, target){
-nacl.box(message, nonce, target, secretk)}
+nacl.box(message, nonce, target, privk)}
 
-function dec (message, nonce, target){
-nacl.box.open(message, nonce, window.location.hash.substr(1), secretk)
+function denc (message, nonce){
+nacl.box.open(message, nonce, window.location.hash.substr(1), privk)
 }
 
 // Output an error message to console.
@@ -138,7 +138,7 @@ tryAgain();}
         break;
 
       case "message":
-if  (msg.text=="request") {serveanddance(msg.name)
+if  (msg.text=="request") {serveanddance(msg.name, Date.now())
  text = "served " + msg.name + " at " + timeStr + "<br>"}
 else {
         text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
@@ -225,14 +225,14 @@ var msg = {
 } return;}
 
 //Function to serve page
-function serveanddance(name){
+function serveanddance(name,time){
 var ttt = document.getElementById("output").innerHTML;
 var msg = {
     text: ttt,
     target: name,
     type: "message",
     id: clientID,  
-    date: Date.now()
+    date: time
   };
   sendToServer(msg);
 }
