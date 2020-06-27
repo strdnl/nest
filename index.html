@@ -36,7 +36,7 @@ document.getElementById("public").innerHTML = textbox;
    
    function kee(){
 
-var key = nacl.sign.keyPair();
+var key = nacl.box.keyPair();
 publick = key.publicKey;
      privk = key.secretKey;
 
@@ -44,7 +44,7 @@ publick = key.publicKey;
 }
    function skee(seed){
      
-     nacl.sign.keyPair.fromSeed(seed);
+     nacl.sign.box.fromSeed(seed);
 publick = key.publicKey;
      privk = key.secretKey;
    }
