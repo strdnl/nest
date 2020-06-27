@@ -30,6 +30,15 @@ textbox = nacl.util.encodeBase64(xx.publicKey);
 document.getElementById("public").innerHTML = textbox;
 
 }
+   
+   function kee(){
+
+var key = nacl.sign.keyPair();
+publick = nacl.util.encodeBase64(key.publicKey);
+     privk = nacl.util.encodeBase64(key.privateKey);
+
+
+}
 ///COUNTDOWN
 
 function startTimer(duration, display) {
@@ -123,8 +132,8 @@ console.log(location.origin);
 </div>
 <script>
 if (location.hash!=""){
-document.getElementById("name").value = (Math.random()+"");
-connect();
+  kee();
+document.getElementById("name").value =  nacl.util.encodeBase64(publick);
 }
 </script>
 </body>
