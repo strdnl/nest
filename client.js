@@ -193,26 +193,6 @@ served = 1;}}
   };
 }
 
-///A heartbeat to handle pings
-
-function heartbeat() {
-  clearTimeout(this.pingTimeout);
-console.log("ping");
-  // Use `WebSocket#terminate()`, which immediately destroys the connection,
-  // instead of `WebSocket#close()`, which waits for the close timer.
-  // Delay should be equal to the interval at which your server
-  // sends out pings plus a conservative assumption of the latency.
-  this.pingTimeout = setTimeout(() => {
-    this.terminate();
-  }, 70000 + 1000);
-}
-
-
-connection.on('open', heartbeat);
-connection.on('ping', heartbeat);
-connection.on('close', function clear() {
-  clearTimeout(this.pingTimeout);
-});
 
 
 // Handles a click on the Send button (or pressing return/enter) by
