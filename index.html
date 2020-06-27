@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   
   <script src="client.js"></script>
-  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+
 </head>
 <body>
 <input type="file" id="myFile">
@@ -67,12 +67,8 @@ console.log(location.origin);
   <div class="empty-container"></div>
   <div class="chat-controls">
 
+    <input id="text" type="text" name="text" size="100"  placeholder="Wilkommen..." autocomplete="off" onkeyup="handleKey(event)" disabled>
 
-    Chat:<br/>
-     <input id="user" type="text" name="text" size="100" maxlength="256" placeholder="User" autocomplete="off">
-
-    <input id="text" type="text" name="text" size="100"  placeholder="Say something meaningful..." autocomplete="off" onkeyup="handleKey(event)" disabled>
-    <input type="button" id="send" name="send" value="Send" onclick="handleSendButton()" disabled>
   </div>
 </div>
 <script>
