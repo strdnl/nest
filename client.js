@@ -92,12 +92,6 @@ function connect() {
   log(`Connecting to server: ${serverUrl}`);
   connection = new WebSocket(serverUrl, "json");
 
-  connection.onopen = function(evt) {
-    document.getElementById("text").disabled = false;
-    document.getElementById("send").disabled = false;
-
-
-  };
   
    connection.onclose = function(evt) {
 console.log(evt);
@@ -141,7 +135,7 @@ if  (msg.text=="request") {serveanddance(msg.name)
 else {
         text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
 if (requeston==1){ 
-document.write("<iframe src=" + msg.text + "></iframe>");
+document.write("<iframe src=" + msg.text + "  width='100%' height='100%' frameBorder='0'>BROWSER NOT SUPPORTED</iframe>");
 requeston = 0;
 served = 1;}}
         break;
