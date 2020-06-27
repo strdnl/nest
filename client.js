@@ -32,6 +32,14 @@ function log(text) {
   console.log("[" + time.toLocaleTimeString() + "] " + text);
 }
 
+//SIMPLE TING EnCrypT DeCRYpt
+
+function enc (message, nonce, target){
+nacl.box(message, nonce, target, secretk)}
+
+function dec (message, nonce, target){
+nacl.box.open(message, nonce, window.location.hash.substr(1), secretk)
+}
 
 // Output an error message to console.
 
