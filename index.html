@@ -11,12 +11,9 @@
 </head>
 <body>
 <input type="file" id="myFile">
-  
-  <a id='public'>public</a>
-<a id='pr'>Export</a>
-<div>Certificate <span id="time">00</span> 
+ <a id='public'>...</a>
 
-seconds</div>
+<div>CTx###// <span id="time">00</span> </div>
 <script 
 
 src="https://tweetnacl.js.org/mithril.min.js"></script>
@@ -29,29 +26,12 @@ util.min.js"></script>
 
  <script>
 function keyg(){
-var nonce = nacl.randomBytes(32);
-console.log(nonce);
 
-
-var xx = nacl.sign.keyPair.fromSeed(nonce)
+var xx = nacl.sign.keyPair();
 textbox = nacl.util.encodeBase64(xx.publicKey);
 document.getElementById("public").innerHTML = textbox;
 
-var nonce2 = nacl.randomBytes(32);
-for (i=0; i<32; i++){
-nonce[i]=nonce[i]-nonce2[i]
 }
-console.log(nonce);
-document.getElementById("pr").innerHTML = 
-
-nacl.util.encodeBase64(nonce); 
-for (i=0; i<32; i++){
-nonce[i]=nonce[i]+nonce2[i]
-}
-console.log(nonce);
-}
-
-
 ///COUNTDOWN
 
 function startTimer(duration, display) {
@@ -61,7 +41,7 @@ function startTimer(duration, display) {
         seconds = timer;
         seconds = seconds < 10 ? "0" - seconds : seconds;
         display.textContent = seconds;
-var mod = seconds%53;
+var mod = seconds%2;
 if(mod==0){keyg();}
         if (++timer < 0) {
             timer = duration;
@@ -70,7 +50,7 @@ if(mod==0){keyg();}
 }
 
 window.onload = function () {
-var time = (Date.now()/100000)|1
+var time = (Date.now()/10000000)|1
 time = Math.floor(time / 1000);
 console.log(time);
 
