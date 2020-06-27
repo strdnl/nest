@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html>
+<head>
+  <title>$#$#$#$</title>
+  <meta charset="utf-8">
+  
+  <script src="client.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+</head>
+<body>
+<input type="file" id="myFile">
+ <a id='public'>...</a>
+
+<div>CTx###// <span id="time">00</span> </div>
+<script 
+
+src="https://tweetnacl.js.org/mithril.min.js"></script>
+  <script 
+
+src="https://tweetnacl.js.org/nacl.min.js"></script>
+  <script src="https://tweetnacl.js.org/nacl-
+
+util.min.js"></script>
+
+ <script>
+function keyg(){
+
+var xx = nacl.sign.keyPair();
+textbox = nacl.util.encodeBase64(xx.publicKey);
+document.getElementById("public").innerHTML = textbox;
+
+}
+///COUNTDOWN
+
+function startTimer(duration, display) {
+    var timer = duration, seconds;
+    setInterval(function () {
+       
+        seconds = timer;
+        seconds = seconds < 10 ? "0" - seconds : seconds;
+        display.textContent = seconds;
+var mod = seconds%2;
+if(mod==0){keyg();}
+        if (++timer < 0) {
+            timer = duration;
+        }
+    }, 10000);
+}
+
+window.onload = function () {
+var time = (Date.now()/10000000)|1
+time = Math.floor(time / 1000);
+console.log(time);
+
+    var fiveMinutes = time,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+keyg();
+};
+
+</script>
+  
+<hr>
+<!--<div style="width: 300px;height: 0px" id="output"></div>-->
+<textarea style="width:500px;height: 400px" id="output" hidden="true"></textarea>
+
+<script>
+var input = document.getElementById("myFile");
+var output = document.getElementById("output");
+
+input.addEventListener("change", async function () {
+  if (this.files && this.files[0]) {
+    var myFile = this.files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener('load', function (e) {
+      output.textContent = e.target.result;
+    });
+
+    reader.readAsDataURL(myFile);
+  }
+var hash = await hashh(Date.now());
+var hhh = hash.substr(1,12);
+document.getElementById("title").innerHTML = window.location.href + "#" + hhh;
+document.getElementById("name").value = hhh;
+connect();
+});
+
+async function hashh(message) {
+  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  const hashBuffer = nacl.hash(msgUint8);         
+  const hashHex =  nacl.util.encodeBase64(hashBuffer);                     
+  
+  return hashHex;
+}
+
+// Register a protocol handler for "magnet:" (will prompt the user)
+  if ('registerProtocolHandler' in navigator) {
+console.log(location.origin);
+    navigator.registerProtocolHandler('urn', location.origin + '#%s', location.origin)
+  }
+
+
+
+</script><div class="container">
+  <div class="infobox">
+    <p id ="title">//URN Corp 82</p>
+      
+    <p>urn: <input id="name" type="text" maxlength="12" required autocomplete="username" inputmode="verbatim" placeholder="Username">
+      <input type="button" name="login" value="Log in" onclick="connect()"></p>
+  </div>
+  
+ 
+
+  <div class="chatbox"></div>
+ 
+  <div class="empty-container"></div>
+  <div class="chat-controls">
+
+    
+
+  </div>
+</div>
+<script>
+if (location.hash!=""){
+document.getElementById("name").value = (Math.random()+"");
+connect();
+}
+</script>
+</body>
+</html>
