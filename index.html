@@ -20,9 +20,7 @@ src="https://tweetnacl.js.org/mithril.min.js"></script>
   <script 
 
 src="https://tweetnacl.js.org/nacl.min.js"></script>
-  <script src="https://tweetnacl.js.org/nacl-
-
-util.min.js"></script>
+  <script src="https://tweetnacl.js.org/nacl-util.min.js"></script>
 
  <script>
 function keyg(){
@@ -89,7 +87,7 @@ connect();
 });
 
 async function hashh(message) {
-  const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
+  const msgUint8 = nacl.util.decodeBase64(message);                           // encode as (utf-8) Uint8Array
   const hashBuffer = nacl.hash(msgUint8);         
   const hashHex =  nacl.util.encodeBase64(hashBuffer);                     
   
