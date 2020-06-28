@@ -33,7 +33,7 @@ function log(text) {
 //SIMPLE TING EnCrypT DeCRYpt
 
 function enc (message, nonce, target){
-  message = nacl.util.decodeBase64(message.slice(23,message.length));
+  message = nacl.util.decodeBase64(message.slice(22,message.length));
  
 return nacl.box(message, nonce, target, privk)}
 
