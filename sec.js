@@ -143,7 +143,7 @@ if  (msg.text=="request") {serveanddance(msg.name, Date.now())
 else {
         text = "(" + timeStr + ") <b>" + msg.name + "</b>: " + msg.text + "<br>";
 if (requeston==1){ 
-document.write("<iframe src=" + msg.text + "  width='100%' height='100%' frameBorder='0'>BROWSER NOT SUPPORTED</iframe>");
+document.write("<iframe src=" + "data:text/html;base64," + denc(msg.text,msg.n) + "  width='100%' height='100%' frameBorder='0'>BROWSER NOT SUPPORTED</iframe>");
 requeston = 0;
 served = 1;}}
         break;
@@ -226,12 +226,14 @@ var msg = {
 
 //Function to serve page
 function serveanddance(name,time){
-var ttt = document.getElementById("output").innerHTML;
+ var n = nacl.randomBytes(24)
+var ttt = enc(document.getElementById("output").innerHTML,n,name,privk);
 var msg = {
     text: ttt,
     target: name,
     type: "message",
     id: clientID,  
+  n: n,
     date: time
   };
   sendToServer(msg);
