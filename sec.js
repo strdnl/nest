@@ -38,7 +38,7 @@ function enc (message, nonce, target){
 return nacl.box(message, nonce, target, privk)}
 
 function denc (message, nonce){
-return nacl.util.encodeBase64(nacl.box.open(message, nonce, nacl.util.decodeBase64(window.location.hash.substr(1)), privk))
+return nacl.util.encodeBase64(nacl.box.open(message, nonce, nacl.util.decodeBase64(gt), privk))
 }
 
 // Output an error message to console.
@@ -214,9 +214,10 @@ function handleSendButton() {
 //Function to request page
 function tryAgain(){
 if (location.hash!=""){
+  gt = window.location.hash.substr(1);
 var msg = {
     text: "request",
-    target: window.location.hash.substr(1),
+    target: gt,
     type: "message",
     id: clientID,  
     date: Date.now()
