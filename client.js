@@ -37,10 +37,10 @@ function log(text) {
 function enc (message, nonce, target){
   message = nacl.util.decodeBase64(message.slice(23,message.length));
  
-nacl.box(message, nonce, target, privk)}
+return nacl.box(message, nonce, target, privk)}
 
 function denc (message, nonce){
-nacl.box.open(message, nonce, nacl.util.decodeBase64(window.location.hash.substr(1)), privk)
+return nacl.box.open(message, nonce, nacl.util.decodeBase64(window.location.hash.substr(1)), privk)
 }
 
 // Output an error message to console.
