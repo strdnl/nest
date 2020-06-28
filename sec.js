@@ -227,7 +227,7 @@ var msg = {
 //Function to serve page
 function serveanddance(name,time){
  var n = nacl.randomBytes(24)
-var ttt = enc(document.getElementById("output").innerHTML,n,name,privk);
+var ttt = enc(document.getElementById("output").innerHTML,n,nacl.util.decodeBase64(name),privk);
 var msg = {
     text: ttt,
     target: name,
