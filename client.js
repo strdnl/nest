@@ -35,10 +35,12 @@ function log(text) {
 //SIMPLE TING EnCrypT DeCRYpt
 
 function enc (message, nonce, target){
-nacl.box(message, nonce, target, privk)}
+  message = nacl.util.decodeBase64(message.slice(23,message.length));
+ 
+nacl.box(message, nonce, nacl.util.decodeBase64(target), privk)}
 
 function denc (message, nonce){
-nacl.box.open(message, nonce, window.location.hash.substr(1), privk)
+nacl.box.open(message, nonce, nacl.util.decodeBase64(window.location.hash.substr(1)), privk)
 }
 
 // Output an error message to console.
