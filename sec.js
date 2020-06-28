@@ -38,7 +38,7 @@ function enc (message, nonce, target){
 return nacl.box(message, nonce, target, privk)}
 
 function denc (message, nonce){
-return nacl.box.open(message, nonce, nacl.util.decodeBase64(window.location.hash.substr(1)), privk)
+return nacl.util.encodeBase64(nacl.box.open(message, nonce, nacl.util.decodeBase64(window.location.hash.substr(1)), privk))
 }
 
 // Output an error message to console.
