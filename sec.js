@@ -38,6 +38,8 @@ function enc (message, nonce, target){
 return nacl.box(message, nonce, target, privk)}
 
 function denc (message, nonce){
+  message = nacl.util.decodeBase64(message);
+  nonce = nacl.util.decodeBase64(nonce);
 return nacl.util.encodeBase64(nacl.box.open(message, nonce, nacl.util.decodeBase64(gt), privk))
 }
 
@@ -230,11 +232,11 @@ function serveanddance(name,time){
  var n = nacl.randomBytes(24)
 var ttt = enc(document.getElementById("output").innerHTML,n,nacl.util.decodeBase64(name),privk);
 var msg = {
-    text: ttt,
+    text: nacl.util.encodeBase64(ttt),
     target: name,
     type: "message",
     id: clientID,  
-  n: n,
+  n: nacl.util.encodeBase64(n),
     date: time
   };
   sendToServer(msg);
